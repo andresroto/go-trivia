@@ -1,0 +1,158 @@
+{
+	"info": {
+		"_postman_id": "e1057931-3f46-4254-87b1-a65aa0ea7884",
+		"name": "Go-trivia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22862349"
+	},
+	"item": [
+		{
+			"name": "Index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/facts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"facts"
+					]
+				},
+				"description": "#### List Facts\n\nRetrieves a list of all facts stored in the database.\n\n#### PATH\n\n``` json\nGET {url}/api/facts\n\n ```\n\n#### **Expected result**\n\n``` json\n[\n    {\n        \"ID\": 1,\n        \"CreatedAt\": \"2023-11-25T17:24:26.377476Z\",\n        \"UpdatedAt\": \"2023-11-25T17:24:26.377476Z\",\n        \"DeletedAt\": null,\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    },\n    {\n        \"ID\": 2,\n        \"CreatedAt\": \"2023-11-25T17:27:03.31146Z\",\n        \"UpdatedAt\": \"2023-11-25T17:27:03.31146Z\",\n        \"DeletedAt\": null,\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    },\n    {\n        \"ID\": 3,\n        \"CreatedAt\": \"2023-11-25T17:27:04.001532Z\",\n        \"UpdatedAt\": \"2023-11-25T17:27:04.001532Z\",\n        \"DeletedAt\": null,\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    },\n    {\n        \"ID\": 4,\n        \"CreatedAt\": \"2023-11-25T17:27:04.401086Z\",\n        \"UpdatedAt\": \"2023-11-25T17:27:04.401086Z\",\n        \"DeletedAt\": null,\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    },\n    {\n        \"ID\": 5,\n        \"CreatedAt\": \"2023-11-25T18:02:29.569818Z\",\n        \"UpdatedAt\": \"2023-11-25T18:02:29.569818Z\",\n        \"DeletedAt\": null,\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    },\n    {\n        \"ID\": 6,\n        \"CreatedAt\": \"2023-11-25T19:40:46.226865Z\",\n        \"UpdatedAt\": \"2023-11-25T19:40:46.226865Z\",\n        \"DeletedAt\": null,\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    },\n    {\n        \"ID\": 7,\n        \"CreatedAt\": \"2023-11-25T19:40:46.87225Z\",\n        \"UpdatedAt\": \"2023-11-25T19:40:46.87225Z\",\n        \"DeletedAt\": null,\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    },\n    {\n        \"ID\": 8,\n        \"CreatedAt\": \"2023-11-25T19:40:47.278899Z\",\n        \"UpdatedAt\": \"2023-11-25T19:40:47.278899Z\",\n        \"DeletedAt\": null,\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    },\n    {\n        \"ID\": 9,\n        \"CreatedAt\": \"2023-11-25T19:40:47.61327Z\",\n        \"UpdatedAt\": \"2023-11-25T19:40:47.61327Z\",\n        \"DeletedAt\": null,\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    },\n    {\n        \"ID\": 10,\n        \"CreatedAt\": \"2023-11-25T19:43:49.27888Z\",\n        \"UpdatedAt\": \"2023-11-25T19:43:49.27888Z\",\n        \"DeletedAt\": null,\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    }\n]\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "Show",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/facts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"facts",
+						"1"
+					]
+				},
+				"description": "#### Show Fact\n\nRetrieves a specific fact based on its ID.\n\n#### PATH\n\n``` json\nGET {url}/api/facts/{:id}\n\n ```\n\n#### Expected validations\n\n``` json\n{\n    \"message\": \"record not found\"\n}\n\n ```\n\n#### **Expected result**\n\n``` json\n{\n    \"ID\": 1,\n    \"CreatedAt\": \"2023-11-25T17:24:26.377476Z\",\n    \"UpdatedAt\": \"2023-11-25T17:24:26.377476Z\",\n    \"DeletedAt\": null,\n    \"question\": \"How many countries are in the world?\",\n    \"answer\": \"195\"\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "Store",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": \"How many countries are in the world?\",\n    \"answer\": \"195\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/facts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"facts"
+					]
+				},
+				"description": "#### Create a fact\n\nCreates a new fact and stores it in the database.\n\n#### PATH\n\n``` json\nPOST {url}/api/facts\n\n ```\n\n#### **Expected result**\n\n``` json\n{\n    \"data\": {\n        \"ID\": 31,\n        \"CreatedAt\": \"2023-11-25T20:47:31.05129192Z\",\n        \"UpdatedAt\": \"2023-11-25T20:47:31.05129192Z\",\n        \"DeletedAt\": null,\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    },\n    \"message\": \"Fact created successfully\"\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"question\": \"How many countries are in the world?\",\n    \"answer\": \"195\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/facts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"facts",
+						"1"
+					]
+				},
+				"description": "#### Update a fact\n\nUpdates an existing fact with new information.\n\n#### PATH\n\n``` json\nPUT {url}/api/facts/{:id}\n\n ```\n\n#### Expected validations\n\n``` json\n{\n    \"message\": \"record not found\"\n}\n\n ```\n\n#### **Expected result**\n\n``` json\n{\n    \"data\": {\n        \"ID\": 1,\n        \"CreatedAt\": \"2023-11-25T17:27:04.401086Z\",\n        \"UpdatedAt\": \"2023-11-25T20:47:10.456137883Z\",\n        \"DeletedAt\": null,\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    },\n    \"message\": \"Fact updated successfully\"\n}\n\n ```"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/facts/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"facts",
+						"2"
+					]
+				},
+				"description": "#### Delete a fact\n\nDeletes a specific fact from the database.\n\n#### PATH\n\n``` json\nDELETE {url}/api/facts/{:id}\n\n ```\n\n#### **Expected result**\n\n``` json\n{\n    \"data\": {\n        \"ID\": 1,\n        \"CreatedAt\": \"2023-11-25T17:27:03.31146Z\",\n        \"UpdatedAt\": \"2023-11-25T17:27:03.31146Z\",\n        \"DeletedAt\": \"2023-11-25T20:43:55.000484251Z\",\n        \"question\": \"How many countries are in the world?\",\n        \"answer\": \"195\"\n    },\n    \"message\": \"Fact deleted successfully\"\n}\n\n ```"
+			},
+			"response": []
+		}
+	]
+}
